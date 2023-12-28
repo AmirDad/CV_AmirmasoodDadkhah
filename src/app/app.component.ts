@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
-
+// src/app/app.component.ts
+import { Component, OnInit } from '@angular/core';
+import { Experience } from './interfaces/experience.model';
+import experiencesData from './../assets/mock-experiences.json';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'CV_AmirmasoodDadkhah';
+export class AppComponent implements OnInit {
+  experiences: Experience[] = [];
+
+  ngOnInit(): void {
+    this.experiences = experiencesData as Experience[];
+  }
 }

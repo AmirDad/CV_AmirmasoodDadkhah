@@ -1,0 +1,11 @@
+<!-- src/app/experience/experience.component.html -->
+<div class="experience">
+    <h3>{{ experience.title }}</h3>
+    <p><strong>Date:</strong> {{ experience.date }}</p>
+    <p><strong>Placement:</strong> {{ experience.placement }}</p>
+    <ul>
+      <li *ngFor="let item of experience.description">{{ item }}</li>
+    </ul>
+    <img [src]="experience.picture" alt="{{ experience.title }}">
+  </div>
+  
